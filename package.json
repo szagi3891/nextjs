@@ -6,9 +6,11 @@
   "author": "Grzegorz Szeliga <szeligagrzegorz@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next"
+    "dev0": "next",
+    "dev": "node server.js"
   },
   "dependencies": {
+    "express": "^4.16.3",
     "next": "^6.0.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
