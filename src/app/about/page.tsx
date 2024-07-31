@@ -4,7 +4,13 @@ export default function About() {
     return (
         <main>
 
-            About page ..
+            <div>
+                About page .. -- ..
+            </div>
+            
+            <div>
+                dadsadas ... === ...
+            </div>
 
         </main>
     );
