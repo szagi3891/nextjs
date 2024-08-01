@@ -3,7 +3,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import React from "react";
-import { serverAction, ServerActionResult, tttt } from "./about/akcja";
+import { getTttt, serverAction, ServerActionResult, tttt } from "./about/akcja";
+
+
 
 
 export default function Home() {
@@ -23,6 +25,17 @@ export default function Home() {
         const data = await tttt();
         setAaa(data);
     }
+
+    const [bbb, setBbb] = React.useState<string | null>(null);
+
+    React.useEffect(() => {
+        (async () => {
+            const cookie = await getTttt()
+
+            setBbb(cookie);
+        })();
+
+    }, []);
 
     const headers = [];
 
@@ -56,6 +69,14 @@ export default function Home() {
 
             <div>
                 { aaa }
+            </div>
+            <div>
+                <div>
+                    ciasteczko
+                </div>
+                <div>
+                    {bbb}
+                </div>
             </div>
         </main>
     );

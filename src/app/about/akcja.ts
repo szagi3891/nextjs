@@ -1,6 +1,6 @@
 'use server'
 
-import { cookies, headers } from 'next/headers'
+import { cookies, headers } from 'next/headers';
  
 
 export interface ServerActionResult {
@@ -34,5 +34,11 @@ export async function serverAction(): Promise<Array<ServerActionResult>> {
 }
 
 export const tttt = async (): Promise<string> => {
+    cookies().set('aaa', 'bbb');
     return 'to jest coś z serwera';
+}
+
+export const getTttt = async (): Promise<string | null> => {
+    const value = cookies().get('aaa');
+    return value?.value ?? null;
 }
